@@ -1,0 +1,11 @@
+{
+    "name" : "MapFriend",
+    "short_name" : "MF",
+    "theme_color" : "#a20668",
+    "background_color" : "#7c0029",
+    "display" : "fullscreen",
+    "Scope" : "/",
+    "start_url" : " https://adrianpastore.github.io/engenhariamapadrian/eng2222/index.html",
+    "lang" : "",
+    "orientation" : "undefined"
+}
