@@ -6,6 +6,7 @@ const name = document.querySelector('#name');
 const form = document.querySelector('form#informelugar');
 const select = document.querySelector('select#start');
 const select1 = document.querySelector('select#end');
+var info = [];
 form.addEventListener('submit', function(e) {
     e.preventDefault();
         const nome = name.value;
@@ -22,4 +23,14 @@ form.addEventListener('submit', function(e) {
         });
         form.reset();
         e.preventDefault();
+        
 });
+if (Envio.existe('respostas')) {
+    var ab   = document.querySelector("#ab").innerHTML;
+    var template = Handlebars.compile(ab);
+    var html = template({
+      respostas: Envio.carrega('respostas')
+    });
+    select.innerHTML += html;
+    select1.innerHTML += html;
+  }

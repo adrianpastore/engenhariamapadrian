@@ -98,6 +98,23 @@
           }
         });
       }
+      
+    </script>
+    <script id="ab" type="text/x-handlebars-template">
+      {{#respostas}}
+      <option value="{{rua}} + ", " + {{numero}} + " " + {{cidade}} + "," + {{estado}}">{{nome}}</option>
+      {{/respostas}}
+    </script>
+
+    <script>
+      if (Envio.existe('respostas')) {
+        var ab   = document.querySelector("#ab").innerHTML;
+        var template = Handlebars.compile(ab);
+        var html = template({
+          respostas: Envio.carrega('respostas')
+        });
+        document.querySelector('tbody').innerHTML = html;
+      }
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCilcBXCZtp5cN7bHgc9u9VzWDKtgZAkYE&callback=initMap">
