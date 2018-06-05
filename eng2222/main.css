@@ -26,7 +26,6 @@
   }
   #right-panel {
     height: 100%;
-    float: right;
-    width: 390px;
+    width: 100%;
     overflow: auto;
   }

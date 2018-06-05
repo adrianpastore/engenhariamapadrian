@@ -13,13 +13,7 @@ form.addEventListener('submit', function(e) {
         const adcs = `<option value="${valor}">${nome}</option>`;
         select.innerHTML += adcs;
         select1.innerHTML += adcs;
-        Envio.adiciona('respostas', {
-            nome: form.name.value,
-            rua: form.rua.value,
-            cidade: form.cidade.value,
-            estado: form.estado.value,
-            numero: form.numero.value
-        });
+        localStorage.setItem(valor, JSON.stringify(valor))
         form.reset();
         e.preventDefault();
 });
