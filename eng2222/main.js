@@ -13,8 +13,13 @@ form.addEventListener('submit', function(e) {
         const adcs = `<option value="${valor}">${nome}</option>`;
         select.innerHTML += adcs;
         select1.innerHTML += adcs;
-        localStorage.setItem("Localização", JSON.stringify(valor));
-        localStorage.setItem("nome", JSON.stringify(nome));
+        Envio.adiciona('respostas', {
+            nome: form.name.value,
+            rua: form.rua.value,
+            cidade: form.cidade.value,
+            estado: form.estado.value,
+            numero: form.numero.value
+        });
         form.reset();
         e.preventDefault();
 });
